@@ -17,7 +17,7 @@ public class Control {
      * en sus respectivas listas
      */
     public void cargarInfo() {
-        this.proveedores = convertidor.leerProveedores();
+        this.proveedores = convertidor.conseguirProveedores();
         this.llenarProductos();
     }
 
@@ -60,7 +60,7 @@ public class Control {
      */
     public void llenarProductos(){
         for (Proveedor proveedor : proveedores) {
-            proveedor.setProductos(convertidor.leerProductos(proveedor.getNombre()));
+            proveedor.setProductos(convertidor.conseguirProductos(proveedor.getNombre()));
         }
     }
 
