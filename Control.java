@@ -3,7 +3,9 @@ import java.util.Scanner;
 
 public class Control {
 
-    ArrayList<Proveedor> proveedores = new ArrayList<Proveedor>();
+    private ArrayList<Proveedor> proveedores = new ArrayList<Proveedor>();
+    private ConvertidorJson convertidor = new ConvertidorJson();
+
 
     public static void main(String[] args) {
         Control c = new Control();
@@ -11,14 +13,12 @@ public class Control {
     }
 
     /**
-     * Carga la informacion de los proveedores y sus productos
+     * Carga la informacion de los proveedores y los productos de cada proveedor
+     * en sus respectivas listas
      */
     public void cargarInfo() {
-        ConvertidorJson convertidor = new ConvertidorJson();
         this.proveedores = convertidor.leerProveedores();
-        for (Proveedor proveedor : proveedores) {
-            proveedor.setProductos(convertidor.leerProductos(proveedor.getNombre()));
-        }
+        this.llenarProductos();
     }
 
     /**
@@ -53,6 +53,15 @@ public class Control {
     public String MensajeRegalo(Producto producto, Proveedor proveedor) {
         return "el regalo es: " + producto.toString() + " precio de envio $" + proveedor.getPrecioEnvio()
                 + " precio total $" + (producto.getPrecio() + proveedor.getPrecioEnvio());
+    }
+
+    /**
+     * llena los productos de cada proveedor
+     */
+    public void llenarProductos(){
+        for (Proveedor proveedor : proveedores) {
+            proveedor.setProductos(convertidor.leerProductos(proveedor.getNombre()));
+        }
     }
 
 }
