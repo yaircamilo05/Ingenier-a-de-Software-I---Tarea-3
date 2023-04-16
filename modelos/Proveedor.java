@@ -31,10 +31,6 @@ public class Proveedor {
         this.precioEnvio = precioEnvio;
     }
 
-    public ArrayList<Producto> getProductos() {
-        return Productos;
-    }
-
     public void setProductos(ArrayList<Producto> Productos) {
         this.Productos = Productos;
     }
