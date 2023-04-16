@@ -1,5 +1,9 @@
+package control;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import manejo_informacion.ConvertidorJson;
+import modelos.*;
 
 public class Control {
 

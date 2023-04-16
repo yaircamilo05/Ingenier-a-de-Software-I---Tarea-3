@@ -1,3 +1,4 @@
+package manejo_informacion;
 import java.io.FileReader;
 import org.json.simple.JSONArray;
 import org.json.simple.parser.JSONParser;

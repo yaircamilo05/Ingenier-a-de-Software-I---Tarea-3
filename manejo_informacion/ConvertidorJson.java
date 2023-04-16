@@ -1,6 +1,10 @@
+package manejo_informacion;
 import java.util.ArrayList;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+
+import modelos.Proveedor;
+import modelos.Producto;
 
 public class ConvertidorJson {
     private LectorJson lector=new LectorJson();

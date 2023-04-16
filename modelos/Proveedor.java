@@ -1,4 +1,7 @@
+package modelos;
+
 import java.util.ArrayList;
+
 
 public class Proveedor {
 
