@@ -13,7 +13,7 @@ public class ConvertidorJson {
     /**
      * @return ArrayList de proveedores del archivo proveedores.json
      */
-    public ArrayList<Proveedor> conseguirProveedores() {
+    public ArrayList<Proveedor> conseguirProveedores() throws Exception {
         ArrayList<Proveedor> proveedores = new ArrayList<Proveedor>();
         JSONArray jsonArray = lector.leerProveedores();
         for (Object object : jsonArray) {
@@ -30,7 +30,7 @@ public class ConvertidorJson {
      * @param nombre nombre del proveedor a buscar en el archivo productos.json
      * @return ArrayList de productos del proveedor
      */
-    public ArrayList<Producto> conseguirProductos(String nombre) {
+    public ArrayList<Producto> conseguirProductos(String nombre) throws Exception {
         ArrayList<Producto> productos = new ArrayList<Producto>();
         JSONArray jsonArray = lector.leerProductos(nombre);
         for (Object object : jsonArray) {

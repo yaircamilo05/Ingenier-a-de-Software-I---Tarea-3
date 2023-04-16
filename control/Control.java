@@ -20,7 +20,7 @@ public class Control {
      * Carga la informacion de los proveedores y los productos de cada proveedor
      * en sus respectivas listas
      */
-    public void cargarInfo() {
+    private void cargarInfo() throws Exception{
         this.proveedores = convertidor.conseguirProveedores();
         this.llenarProductos();
     }
@@ -30,6 +30,7 @@ public class Control {
      * el usuario
      */
     public void buscarRegalo() {
+        try{
         this.cargarInfo();
         boolean encontrado = false;
         System.out.println("ingrese la edad de la persona");
@@ -48,6 +49,10 @@ public class Control {
         }
         escaner.close();
     }
+    catch(Exception e){
+        System.out.println("error al cargar la informacion");
+    }
+}
 
     /**
      * @param producto producto a regalar
@@ -62,7 +67,7 @@ public class Control {
     /**
      * llena los productos de cada proveedor
      */
-    public void llenarProductos(){
+    private void llenarProductos() throws Exception{
         for (Proveedor proveedor : proveedores) {
             proveedor.setProductos(convertidor.conseguirProductos(proveedor.getNombre()));
         }

@@ -2,9 +2,9 @@ package modelos;
 
 public class Producto {
 
-    String nombre;
-    double precio;
-    int edad;
+    private String nombre;
+    private double precio;
+    private int edad;
 
     public Producto(String nombre, double precio, int edad) {
         this.nombre = nombre;
