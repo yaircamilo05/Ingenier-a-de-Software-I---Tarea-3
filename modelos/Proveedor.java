@@ -38,7 +38,7 @@ public class Proveedor {
     public ArrayList<Producto> buscarProductos(int edad, double precio) {
         ArrayList<Producto> ProductosEncontrados = new ArrayList<Producto>();
         for (Producto Producto : Productos) {
-            if (Producto.getEdad() == edad && Producto.getPrecio() < precio) {
+            if (Producto.getEdad() == edad && Producto.getPrecio()+this.getPrecioEnvio() < precio) {
                 ProductosEncontrados.add(Producto);
             }
         }

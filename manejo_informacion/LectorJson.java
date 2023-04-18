@@ -4,6 +4,8 @@ import org.json.simple.JSONArray;
 import org.json.simple.parser.JSONParser;
 
 public class LectorJson{
+    private final String urlProveedores="./data/proveedores.json";
+    private final String urlProductos="./data/productos.json";
 
     /**
      * Lee el archivo proveedores.json y lo convierte en un JSONArray
@@ -11,7 +13,7 @@ public class LectorJson{
      */
     public JSONArray leerProveedores()throws Exception {
         JSONParser parser = new JSONParser();
-        FileReader reader = new FileReader("./data/proveedores.json");
+        FileReader reader = new FileReader(this.urlProveedores);
         Object obj = parser.parse(reader);
         JSONArray jsonArray = (JSONArray) obj;
         return jsonArray;
@@ -24,7 +26,7 @@ public class LectorJson{
      */
     public JSONArray leerProductos(String nombre) throws Exception {
         JSONParser parser = new JSONParser();
-        FileReader reader = new FileReader("./data/productos.json");
+        FileReader reader = new FileReader(this.urlProductos);
             Object obj = parser.parse(reader);
             JSONArray jsonArray = (JSONArray) obj;
             return jsonArray;
